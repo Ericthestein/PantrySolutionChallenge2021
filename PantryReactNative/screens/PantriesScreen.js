@@ -6,7 +6,7 @@ const PantriesScreen = (props) => {
 
     return(
         <MapListView
-            data={[]}
+            
         />
     )
 }

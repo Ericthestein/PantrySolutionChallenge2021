@@ -1,9 +1,11 @@
 import * as React from 'react';
-import {View, StyleSheet, SafeAreaView} from "react-native";
+import {View, StyleSheet, SafeAreaView, Text, Dimensions} from "react-native";
 import {FontAwesome5, MaterialIcons} from "@expo/vector-icons";
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import CustomMapView from "./CustomMapView";
 import CustomListView from "./CustomListView";
+
+
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -29,6 +31,7 @@ const MapListView = (props) => {
                         />
                     }
                 </Tab.Screen>
+             
                 <Tab.Screen
                     name="list"
                     options={{
