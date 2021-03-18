@@ -6,6 +6,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 
 import PantriesScreen from "./PantriesScreen";
 import RequestsScreen from "./RequestsScreen";
+import SettingsScreen from "./SettingsScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -43,6 +44,23 @@ const MainTabsNavigator = (props) => {
                 >
                     {(navProps) =>
                         <RequestsScreen
+                            {...navProps}
+                            {...props}
+                        />
+                    }
+                </Tab.Screen>
+                <Tab.Screen
+                    name="settings"
+                    options={{
+                        tabBarLabel: 'Settings',
+                        tabBarIcon: ({ color, size, focused }) => (
+                            <FontAwesome5 name="cog" size={size} color={color} />
+                        ),
+                        title: "Settings"
+                    }}
+                >
+                    {(navProps) =>
+                        <SettingsScreen
                             {...navProps}
                             {...props}
                         />

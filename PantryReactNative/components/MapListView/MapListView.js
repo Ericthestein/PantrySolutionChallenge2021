@@ -5,8 +5,6 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import CustomMapView from "./CustomMapView";
 import CustomListView from "./CustomListView";
 
-
-
 const Tab = createMaterialTopTabNavigator();
 
 const MapListView = (props) => {
