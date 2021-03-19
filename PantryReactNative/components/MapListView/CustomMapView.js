@@ -20,8 +20,8 @@ const CustomMapView = (props) => {
                         <Marker
                             key={marker.title}
                             coordinate = {{
-                                latitude: marker.latitude,
-                                longitude: marker.longitude
+                                latitude: marker.location.latitude,
+                                longitude: marker.location.longitude
                             }}
                             title = {marker.title}>
                         </Marker>

@@ -1,14 +1,34 @@
 import React, {useState, useEffect} from 'react';
-import {StyleSheet, View, ScrollView, SafeAreaView} from "react-native";
+import {StyleSheet, View, ScrollView, SafeAreaView, Alert} from "react-native";
 import {Button} from "react-native-paper";
 import * as firebase from "firebase";
+import FirestoreDataAgent from "../data/FirestoreDataAgent";
 
 const SettingsScreen = (props) => {
-    const {authenticated} = props;
+    const {authenticated, user} = props;
+
+    const dataAgent = new FirestoreDataAgent();
 
     const attemptLogout = () => {
         firebase.auth().signOut();
+        showAlert("Logged out", "")
     }
+
+    const attemptCancelFoodRequest = () => {
+        dataAgent.cancelFoodRequest(user).then(() => {
+            showAlert("Success!", "Cancelled your food request")
+        }).catch((err) => {
+            showAlert("Error Cancelling Food Request", err.toString())
+        })
+    }
+
+    const showAlert = (title, desc) => {
+        Alert.alert(
+            title,
+            desc
+        );
+    }
+
 
     return(
         <View style={styles.container}>
@@ -20,6 +40,10 @@ const SettingsScreen = (props) => {
                         onPress={attemptLogout}
                         disabled={!authenticated}
                     >Logout</Button>
+                    <Button
+                        onPress={attemptCancelFoodRequest}
+                        disabled={!authenticated}
+                    >Cancel Food Request</Button>
                 </ScrollView>
             </SafeAreaView>
         </View>

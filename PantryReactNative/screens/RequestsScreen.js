@@ -1,38 +1,44 @@
 import React, {useState, useEffect} from 'react';
-import MapListView from "../components/MapListView/MapListView";
-import AuthenticationRequiredMessage from "../components/Authentication/AuthenticationRequiredMessage";
-import AuthenticationScreen from "./AuthenticationScreen";
+import {View, StyleSheet} from 'react-native'
+import {createStackNavigator} from "@react-navigation/stack";
+import RequestsHomeScreen from "../components/Requests/RequestsHomeScreen";
+import RequestCreatorScreen from "../components/Requests/RequestCreatorScreen";
+import PantriesScreen from "./PantriesScreen";
+
+const Stack = createStackNavigator();
 
 // TODO: get requests from database
 const RequestsScreen = (props) => {
-    const {authenticated, user} = props;
-
-    const [requests, setRequests] = useState([]);
-
-    useEffect(() => {
-        if (authenticated) {
-            getRequests();
-        }
-    }, [authenticated])
-
-    const getRequests = () => {
-        // TODO: fetch from firestore
-        setRequests([]);
-    }
-
-    if (authenticated) {
-        return(
-            <MapListView
-                data={[]}
-            />
-        )
-    } else {
-        // TODO: use stack navigator to push authentication screen to stack?
-        return(
-            <AuthenticationScreen />
-        )
-    }
-
+    return(
+        <Stack.Navigator initialRouteName="RequestsHome">
+            <Stack.Screen
+                name="RequestsHome"
+            >
+                {(navProps) =>
+                    <RequestsHomeScreen
+                        {...navProps}
+                        stackNavigation={navProps.navigation}
+                        {...props}
+                    />
+                }
+            </Stack.Screen>
+            <Stack.Screen
+                name="RequestCreator"
+            >
+                {(navProps) =>
+                    <RequestCreatorScreen
+                        {...navProps}
+                        stackNavigation={navProps.navigation}
+                        {...props}
+                    />
+                }
+            </Stack.Screen>
+        </Stack.Navigator>
+    )
 }
+
+const styles = StyleSheet.create({
+
+})
 
 export default RequestsScreen;
