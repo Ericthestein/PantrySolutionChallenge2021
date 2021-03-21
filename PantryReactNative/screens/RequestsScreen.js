@@ -3,7 +3,6 @@ import {View, StyleSheet} from 'react-native'
 import {createStackNavigator} from "@react-navigation/stack";
 import RequestsHomeScreen from "../components/Requests/RequestsHomeScreen";
 import RequestCreatorScreen from "../components/Requests/RequestCreatorScreen";
-import PantriesScreen from "./PantriesScreen";
 
 const Stack = createStackNavigator();
 
