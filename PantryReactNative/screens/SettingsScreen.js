@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {StyleSheet, View, ScrollView, SafeAreaView, Alert} from "react-native";
+import {StyleSheet, View, ScrollView, SafeAreaView, Alert, StatusBar } from "react-native";
 import {Button} from "react-native-paper";
 import * as firebase from "firebase";
 import FirestoreDataAgent from "../data/FirestoreDataAgent";
@@ -52,6 +52,7 @@ const SettingsScreen = (props) => {
 
 const styles = StyleSheet.create({
     container: {
+        marginTop:StatusBar.currentHeight,
         height: "100%",
         width: "100%",
         backgroundColor: "white",
