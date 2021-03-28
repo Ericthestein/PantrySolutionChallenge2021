@@ -43,6 +43,29 @@ const locations =
             hours:'8:30AM - 4:30PM',
             phone:'434-973-6512'
         },
+        {
+            title: 'Food Distribution Center - Holy Comforter Outreach',
+            location: {
+                latitude: 38.037094,
+                longitude: -78.512128
+            },
+            address: '208 E Jefferson St, Charlottesville, VA 22902',
+            hours:'8:30AM - 4:30PM',
+            phone:'434-295-7185'
+        },
+        {
+            title: 'The Salvation Army',
+            location: {
+                latitude: 38.020932,
+                longitude: -78.489034
+            },
+            address: '207 Ridge St, Charlottesville, VA 22902',
+            hours:'7:00AM - 6:30PM',
+            phone:'434-295-4058'
+        },
+
+       
+
     ];
 
 const PantriesScreen = (props) => {
