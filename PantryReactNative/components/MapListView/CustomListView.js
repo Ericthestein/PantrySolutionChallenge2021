@@ -1,6 +1,8 @@
 import * as React from 'react';
 import {View, StyleSheet, Text, FlatList, SectionList, SafeAreaView} from "react-native";
-//import { FlatList } from 'react-native-gesture-handler';
+//import  { userLoc }  from "PantrySolutionChallenge2021/PantryReactNative/components/MapListView/CustomMapView.js";
+
+
 renderHeader = () => {
   return (
     <View>
@@ -16,7 +18,7 @@ const CustomListView = (props) => {
         <View style={styles.container}>
             <FlatList
                 data={data}
-                ListHeaderComponent = {this.renderHeader}
+                ListHeaderComponent = {renderHeader}
                 renderItem={({item}) => 
                 <View style = {styles.flatlist}>
                   <Text style={styles.heading2}>{item.title}</Text>

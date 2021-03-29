@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import MapListView from "../components/MapListView/MapListView";
 
+
+
 const locations =
     [
         {
@@ -11,7 +13,7 @@ const locations =
             },
             address: '1207 Harris St, Charlottesville, VA 22903',
             hours:'8:30AM - 4:30PM',
-            phone:'434-296-3663'
+            phone:'434-296-3663',
         },
         {
             title: 'Emergecy Food Network',
@@ -21,7 +23,7 @@ const locations =
             },
             address: '900 Harris St.Charlottesville, VA 22903',
             hours:'9:00AM - 3:30PM',
-            phone:'434-979-9180'
+            phone:'434-979-9180',
         },
         {
             title: 'Loaves & Fishes Food Pantry',
@@ -31,7 +33,7 @@ const locations =
             },
             address: '2050 Lambs Rd, Charlottesville, VA 22901',
             hours:'2:00PM - 4:00PM',
-            phone:'434-996-7868'
+            phone:'434-996-7868',
         },
         {
             title: 'Food Distribution Center - Church of Our Saviour Episcopal',
@@ -41,7 +43,7 @@ const locations =
             },
             address: '1165 Rio Rd E, Charlottesville, VA 22901',
             hours:'8:30AM - 4:30PM',
-            phone:'434-973-6512'
+            phone:'434-973-6512',
         },
         {
             title: 'Food Distribution Center - Holy Comforter Outreach',
@@ -51,7 +53,7 @@ const locations =
             },
             address: '208 E Jefferson St, Charlottesville, VA 22902',
             hours:'8:30AM - 4:30PM',
-            phone:'434-295-7185'
+            phone:'434-295-7185',
         },
         {
             title: 'The Salvation Army',
@@ -61,7 +63,7 @@ const locations =
             },
             address: '207 Ridge St, Charlottesville, VA 22902',
             hours:'7:00AM - 6:30PM',
-            phone:'434-295-4058'
+            phone:'434-295-4058',
         },
 
        

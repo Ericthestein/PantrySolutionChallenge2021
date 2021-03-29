@@ -29,8 +29,9 @@ const CustomMapView = (props) => {
       text = errorMsg;
     } else if (location) {
       text = JSON.stringify(location);
-      console.log(location.coords.latitude);
+      
     }
+    console.log(text);
     return(
         <View style={styles.container}>
             <MapView style={styles.map}
@@ -41,6 +42,14 @@ const CustomMapView = (props) => {
                     longitudeDelta: 0.0421,
                   }}
             >
+                <Marker
+                    key = 'you'
+                    coordinate = {{
+                        latitude: location.coords.latitude,
+                        longitude: location.coords.longitude
+                    }}
+                    title='you are here'>
+                </Marker>
         
                 {
                     data.map(marker => (
