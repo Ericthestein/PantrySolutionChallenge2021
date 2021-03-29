@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {View, StyleSheet, SafeAreaView, Text, Dimensions} from "react-native";
+import {View, StyleSheet, SafeAreaView, Text, Dimensions, StatusBar} from "react-native";
 import {FontAwesome5, MaterialIcons} from "@expo/vector-icons";
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import CustomMapView from "./CustomMapView";
@@ -54,6 +54,7 @@ const MapListView = (props) => {
 
 const styles = StyleSheet.create({
     container: {
+		marginTop:StatusBar.currentHeight,
         height: "100%",
         width: "100%",
         backgroundColor: "white"
