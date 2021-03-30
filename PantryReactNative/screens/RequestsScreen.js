@@ -9,7 +9,12 @@ const Stack = createStackNavigator();
 // TODO: get requests from database
 const RequestsScreen = (props) => {
     return(
-        <Stack.Navigator initialRouteName="RequestsHome">
+        <Stack.Navigator
+            initialRouteName="RequestsHome"
+            screenOptions={{
+                headerShown: false
+            }}
+        >
             <Stack.Screen
                 name="RequestsHome"
             >
@@ -23,6 +28,10 @@ const RequestsScreen = (props) => {
             </Stack.Screen>
             <Stack.Screen
                 name="RequestCreator"
+                options={{
+                    title: "Create a Request",
+                    headerShown: true
+                }}
             >
                 {(navProps) =>
                     <RequestCreatorScreen

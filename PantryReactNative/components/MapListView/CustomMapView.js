@@ -8,7 +8,12 @@ import { useState, useEffect } from 'react';
 const CustomMapView = (props) => {
 
     const {data, onClick} = props;
-    const [location, setLocation] = useState(null);
+    const [location, setLocation] = useState({
+        coords: {
+            latitude: 38.0398044,
+            longitude: -78.4808397
+        }
+    });
     const [errorMsg, setErrorMsg] = useState(null);
   
     useEffect(() => {
@@ -29,7 +34,7 @@ const CustomMapView = (props) => {
       text = errorMsg;
     } else if (location) {
       text = JSON.stringify(location);
-      
+
     }
     console.log(text);
     return(
@@ -48,7 +53,7 @@ const CustomMapView = (props) => {
                         latitude: location.coords.latitude,
                         longitude: location.coords.longitude
                     }}
-                    title='you are here'>
+                    title='You are here'>
                 </Marker>
         
                 {

@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import MapListView from "../components/MapListView/MapListView";
 
-
-
 const locations =
     [
         {
@@ -85,6 +83,7 @@ const PantriesScreen = (props) => {
     return(
         <MapListView
             data={pantries}
+            dataType={"pantries"}
             onClick={() => {}}
         />
     )

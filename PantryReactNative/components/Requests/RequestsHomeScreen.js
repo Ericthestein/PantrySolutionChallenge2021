@@ -47,6 +47,7 @@ const RequestsHomeScreen = (props) => {
             <View>
                 <MapListView
                     data={requests}
+                    dataType={"requests"}
                 />
                 <FAB
                     style={styles.plusButton}
