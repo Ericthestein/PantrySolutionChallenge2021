@@ -64,6 +64,7 @@ const CustomMapView = (props) => {
                                 latitude: marker.location.latitude,
                                 longitude: marker.location.longitude
                             }}
+                            image={require('./customPin2.png')}
                             title = {marker.title}>
                         </Marker>
                     ))
