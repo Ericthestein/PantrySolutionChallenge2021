@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {View, StyleSheet, Text, FlatList, SectionList, SafeAreaView} from "react-native";
+import {View, StyleSheet, Text, FlatList, SectionList, SafeAreaView, Platform} from "react-native";
 //import  { userLoc }  from "PantrySolutionChallenge2021/PantryReactNative/components/MapListView/CustomMapView.js";
 
 
@@ -74,7 +74,9 @@ const CustomListView = (props) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+      width: "100%",
+      height: Platform.OS === "android" ? "93%" : "100%",
+      top: 0
   },
   header:{
     fontSize:30,
@@ -83,6 +85,7 @@ const styles = StyleSheet.create({
   },
   flatlist:{
     paddingVertical:10,
+
   },
   heading2:{
     fontSize: 30,

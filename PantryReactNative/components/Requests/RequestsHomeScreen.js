@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View, StyleSheet} from 'react-native'
+import {View, StyleSheet, Platform} from 'react-native'
 import { FAB } from 'react-native-paper';
 import MapListView from "../MapListView/MapListView";
 import AuthenticationScreen from "../../screens/AuthenticationScreen";
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         margin: 16,
         right: 0,
-        bottom: 0
+        bottom: Platform.OS === "android" ? 50 : 0
     }
 })
 
